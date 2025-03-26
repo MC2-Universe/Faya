@@ -112,7 +112,7 @@ export default memo(() => {
           <div className={styles.text}>
             <Title className={styles.title} level={4}>
               <div>
-                <ProductLogo className={styles.logo} size={48} type={'text'}
+                <ProductLogo className={styles.logo} size={48} type={'text'} />
               </div>
               {t('signIn.start.title', { applicationName: 'Faya' })}
             </Title>
