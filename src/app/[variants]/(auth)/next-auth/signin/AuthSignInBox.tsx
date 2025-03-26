@@ -50,6 +50,10 @@ const useStyles = createStyles(({ css, token }) => ({
     margin: 0;
     color: ${token.colorTextHeading};
   `,
+  logo: css`
+    color: ${token.colorText};
+    fill: ${token.colorText};
+  `,
 }));
 
 const BtnListLoading = memo(() => {
