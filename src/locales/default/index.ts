@@ -2,7 +2,7 @@ import auth from './auth';
 import changelog from './changelog';
 import chat from './chat';
 import clerk from './clerk';
-import common from './temp';
+import common from './common';
 import components from './components';
 import discover from './discover';
 import error from './error';
