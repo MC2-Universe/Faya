@@ -60,7 +60,7 @@ const InboxWelcome = memo(() => {
         </Markdown>
         {showWelcomeSuggest && (
           <>
-            <AgentsSuggest mobile={mobile} />
+            {!isCustomBranding && <AgentsSuggest mobile={mobile} />}
             {!isCustomBranding && <QuestionSuggest mobile={mobile} />}
           </>
         )}
