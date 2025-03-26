@@ -1,3 +1,4 @@
+/* eslint-disable no-irregular-whitespace */
 export default {
   about: 'About',
   advanceSettings: 'Advanced Settings',
