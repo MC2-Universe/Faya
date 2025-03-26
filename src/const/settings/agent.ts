@@ -1,5 +1,4 @@
-import * as fs from 'node:fs';
-import { join } from 'node:path';
+/* eslint-disable no-useless-escape */
 import { DEFAULT_AGENT_META } from '@/const/meta';
 import { DEFAULT_MODEL, DEFAULT_PROVIDER } from '@/const/settings/llm';
 import { LobeAgentChatConfig, LobeAgentConfig, LobeAgentTTSConfig } from '@/types/agent';
