@@ -10,7 +10,7 @@ const Anthropic: ModelProviderCard = {
       displayName: 'Claude 3.7 Sonnet',
       enabled: true,
       functionCall: true,
-      id: 'claude-3-7-sonnet-20250219',
+      id: '0219claude-3-7-sonnet-2025',
       maxOutput: 8192,
       pricing: {
         cachedInput: 0.1,

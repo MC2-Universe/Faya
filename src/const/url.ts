@@ -9,7 +9,7 @@ import { INBOX_SESSION_ID } from './session';
 
 export const UTM_SOURCE = 'chat_preview';
 
-export const OFFICIAL_URL = 'https://playmc2.com';
+export const OFFICIAL_URL = 'https://faya.mc3.network/';
 export const OFFICIAL_PREVIEW_URL = 'https://faya.mc3.network';
 export const OFFICIAL_SITE = 'https://playmc2.com';
 

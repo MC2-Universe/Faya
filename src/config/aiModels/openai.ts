@@ -36,7 +36,6 @@ export const openaiChatModels: AIChatModelCard[] = [
     description:
       'o1-mini是一款针对编程、数学和科学应用场景而设计的快速、经济高效的推理模型。该模型具有128K上下文和2023年10月的知识截止日期。',
     displayName: 'OpenAI o1-mini',
-    enabled: true,
     id: 'o1-mini',
     maxOutput: 65_536,
     pricing: {
@@ -56,7 +55,6 @@ export const openaiChatModels: AIChatModelCard[] = [
     description:
       'o1是OpenAI新的推理模型，支持图文输入并输出文本，适用于需要广泛通用知识的复杂任务。该模型具有200K上下文和2023年10月的知识截止日期。',
     displayName: 'OpenAI o1',
-    enabled: true,
     id: 'o1',
     maxOutput: 100_000,
     pricing: {
@@ -75,7 +73,6 @@ export const openaiChatModels: AIChatModelCard[] = [
     description:
       'o1是OpenAI新的推理模型，适用于需要广泛通用知识的复杂任务。该模型具有128K上下文和2023年10月的知识截止日期。',
     displayName: 'OpenAI o1-preview',
-    enabled: true,
     id: 'o1-preview',
     maxOutput: 32_768,
     pricing: {
@@ -151,7 +148,6 @@ export const openaiChatModels: AIChatModelCard[] = [
     description:
       'ChatGPT-4o 是一款动态模型，实时更新以保持当前最新版本。它结合了强大的语言理解与生成能力，适合于大规模应用场景，包括客户服务、教育和技术支持。',
     displayName: 'GPT-4o',
-    enabled: true,
     id: 'gpt-4o',
     pricing: {
       cachedInput: 1.25,
@@ -216,7 +212,6 @@ export const openaiChatModels: AIChatModelCard[] = [
     description:
       'ChatGPT-4o 是一款动态模型，实时更新以保持当前最新版本。它结合了强大的语言理解与生成能力，适合于大规模应用场景，包括客户服务、教育和技术支持。',
     displayName: 'ChatGPT-4o',
-    enabled: true,
     id: 'chatgpt-4o-latest',
     pricing: {
       input: 5,

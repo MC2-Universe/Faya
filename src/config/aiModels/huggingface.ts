@@ -2,6 +2,16 @@ import { AIChatModelCard } from '@/types/aiModel';
 
 const huggingfaceChatModels: AIChatModelCard[] = [
   {
+    abilities: {
+      reasoning: true,
+    },
+    contextWindowTokens: 108_000,
+    displayName: 'Faya Gamma 012',
+    enabled: true,
+    id: 'playmc2/faya-gamma-12',
+    type: 'chat',
+  },
+  {
     contextWindowTokens: 32_768,
     description: 'Mistral AI的指令调优模型',
     displayName: 'Mistral 7B Instruct v0.3',
@@ -36,7 +46,6 @@ const huggingfaceChatModels: AIChatModelCard[] = [
     contextWindowTokens: 32_768,
     description: 'Qwen QwQ 是由 Qwen 团队开发的实验研究模型，专注于提升AI推理能力。',
     displayName: 'QwQ 32B Preview',
-    enabled: true,
     id: 'Qwen/QwQ-32B-Preview',
     type: 'chat',
   },
@@ -67,7 +76,6 @@ const huggingfaceChatModels: AIChatModelCard[] = [
     },
     contextWindowTokens: 128_000,
     displayName: 'DeepSeek R1',
-    enabled: true,
     id: 'deepseek-ai/DeepSeek-R1',
     type: 'chat',
   },

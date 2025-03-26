@@ -11,7 +11,7 @@ import { useTranslation } from 'react-i18next';
 import BrandWatermark from '@/components/BrandWatermark';
 import { ProductLogo } from '@/components/Branding';
 import AuthIcons from '@/components/NextAuth/AuthIcons';
-import { DOCUMENTS_REFER_URL, PRIVACY_URL, TERMS_URL } from '@/const/url';
+import { DOCUMENTS_REFER_URL, PRIVACY_URL, TERMS_URL, OFFICIAL_PREVIEW_URL } from '@/const/url';
 import { useUserStore } from '@/store/user';
 
 const { Title, Paragraph } = Typography;
@@ -102,13 +102,14 @@ export default memo(() => {
   };
 
   const footerBtns = [
+    { href: OFFICIAL_PREVIEW_URL, id: 0, label: t('backButton') },
     { href: DOCUMENTS_REFER_URL, id: 0, label: t('footerPageLink__help') },
     { href: PRIVACY_URL, id: 1, label: t('footerPageLink__privacy') },
     { href: TERMS_URL, id: 2, label: t('footerPageLink__terms') },
   ];
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container}> 
       <div className={styles.contentCard}>
         {/* Card Body */}
         <Flex gap="large" vertical>

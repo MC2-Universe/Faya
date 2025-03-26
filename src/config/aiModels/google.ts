@@ -11,7 +11,6 @@ const googleChatModels: AIChatModelCard[] = [
     description:
       'Gemini 2.0 Pro Experimental 是 Google 最新的实验性多模态AI模型，与历史版本相比有一定的质量提升，特别是对于世界知识、代码和长上下文。',
     displayName: 'Gemini 2.0 Pro Experimental 02-05',
-    enabled: true,
     id: 'gemini-2.0-pro-exp-02-05',
     maxOutput: 8192,
     pricing: {
@@ -36,7 +35,6 @@ const googleChatModels: AIChatModelCard[] = [
     description:
       'Gemini 2.0 Flash 提供下一代功能和改进，包括卓越的速度、原生工具使用、多模态生成和1M令牌上下文窗口。',
     displayName: 'Gemini 2.0 Flash',
-    enabled: true,
     id: 'gemini-2.0-flash',
     maxOutput: 8192,
     pricing: {
@@ -100,7 +98,6 @@ const googleChatModels: AIChatModelCard[] = [
     contextWindowTokens: 32_768,
     description: 'Gemini 2.0 Flash 模型变体，针对成本效益和低延迟等目标进行了优化。',
     displayName: 'Gemini 2.0 Flash Exp',
-    enabled: true,
     id: 'gemini-2.0-flash-exp',
     maxOutput: 8192,
     pricing: {
@@ -118,7 +115,6 @@ const googleChatModels: AIChatModelCard[] = [
     contextWindowTokens: 32_768,
     description: 'Gemini 2.0 Flash 实验模型，支持图像生成',
     displayName: 'Gemini 2.0 Flash (Image Generation) Experimental',
-    enabled: true,
     id: 'gemini-2.0-flash-exp-image-generation',
     maxOutput: 8192,
     pricing: {
