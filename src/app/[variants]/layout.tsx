@@ -77,7 +77,22 @@ export const generateStaticParams = () => {
   const themes: ThemeAppearance[] = ['dark', 'light'];
   const mobileOptions = [true, false];
   // only static for serveral page, other go to dynamtic
-  const staticLocales: Locales[] = [DEFAULT_LANG, 'zh-CN'];
+  const staticLocales: Locales[] = [DEFAULT_LANG, 'en-US'];
+  
+    const variants: { variants: string }[] = [];
+    
+      for (const locale of staticLocales) {
+          for (const theme of themes) {
+                for (const isMobile of mobileOptions) {
+                        variants.push({
+                                  variants: RouteVariants.serializeVariants({ isMobile, locale, theme }),
+                                          });
+                                                }
+                                                    }
+                                                      }
+                                                      
+                                                        return variants;
+                                                        };'];
 
   const variants: { variants: string }[] = [];
 

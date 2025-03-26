@@ -31,6 +31,7 @@ export const normalizeLocale = (locale?: string): string => {
   if (locale.startsWith('fa')) return 'fa-IR';
 
   if (locale.startsWith('cn')) return 'zh-CN';
+  if (locale.startsWith('en')) return 'en-US';
 
   for (const l of locales) {
     if (l.startsWith(locale)) {

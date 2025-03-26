@@ -22,7 +22,7 @@ export const translation = async (ns: NS = 'common', hl: string) => {
     if (!isExist)
       filepath = join(
         process.cwd(),
-        `locales/${normalizeLocale(isDev ? 'zh-CN' : DEFAULT_LANG)}/${ns}.json`,
+        `locales/${normalizeLocale(isDev ? 'en-US' : DEFAULT_LANG)}/${ns}.json`,
       );
     const file = readFileSync(filepath, 'utf8');
     i18ns = JSON.parse(file);
