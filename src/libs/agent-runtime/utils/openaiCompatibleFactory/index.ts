@@ -237,7 +237,7 @@ export const LobeOpenAICompatibleFactory = <T extends Record<string, any> = any>
           }
 
           response = await this.client.chat.completions.create(finalPayload, {
-            // https://github.com/lobehub/lobe-chat/pull/318
+            // https://github.com/mc2-universe/faya/pull/318
             headers: { Accept: '*/*', ...options?.requestHeaders },
             signal: options?.signal,
           });
@@ -367,7 +367,7 @@ export const LobeOpenAICompatibleFactory = <T extends Record<string, any> = any>
     protected handleError(error: any): ChatCompletionErrorPayload {
       let desensitizedEndpoint = this.baseURL;
 
-      // refs: https://github.com/lobehub/lobe-chat/issues/842
+      // refs: https://github.com/mc2-universe/faya/issues/842
       if (this.baseURL !== DEFAULT_BASE_URL) {
         desensitizedEndpoint = desensitizeUrl(this.baseURL);
       }

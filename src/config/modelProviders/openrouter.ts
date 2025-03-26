@@ -331,7 +331,7 @@ const OpenRouter: ModelProviderCard = {
   },
   settings: {
     // OpenRouter don't support browser request
-    // https://github.com/lobehub/lobe-chat/issues/5900
+    // https://github.com/mc2-universe/faya/issues/5900
     disableBrowserRequest: true,
 
     proxyUrl: {

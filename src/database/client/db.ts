@@ -239,7 +239,7 @@ export class DatabaseManager {
         let db: typeof PGlite;
 
         // make db as web worker if worker is available
-        // https://github.com/lobehub/lobe-chat/issues/5785
+        // https://github.com/mc2-universe/faya/issues/5785
         if (typeof Worker !== 'undefined' && typeof navigator.locks !== 'undefined') {
           db = await initPgliteWorker({
             dbName: DB_NAME,

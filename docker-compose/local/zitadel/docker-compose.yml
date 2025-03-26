@@ -60,7 +60,7 @@ services:
         condition: service_healthy
 
   lobe:
-    image: lobehub/lobe-chat-database
+    image: mc2-universe/faya-database
     container_name: lobe-chat
     network_mode: 'service:network-service'
     depends_on:

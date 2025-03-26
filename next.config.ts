@@ -218,7 +218,7 @@ const nextConfig: NextConfig = {
     config.resolve.alias.canvas = false;
 
     // to ignore epub2 compile error
-    // refs: https://github.com/lobehub/lobe-chat/discussions/6769
+    // refs: https://github.com/mc2-universe/faya/discussions/6769
     config.resolve.fallback = {
       ...config.resolve.fallback,
       zipfile: false,

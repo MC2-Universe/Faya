@@ -50,7 +50,7 @@ services:
         condition: service_healthy
 
   lobe:
-    image: lobehub/lobe-chat-database
+    image: mc2-universe/faya-database
     container_name: lobe-chat
     ports:
       - '3210:3210'

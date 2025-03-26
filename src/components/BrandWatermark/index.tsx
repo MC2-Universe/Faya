@@ -1,6 +1,6 @@
 'use client';
 
-import { LobeHub } from '@lobehub/ui/brand';
+// import { LobeHub } from '@lobehub/ui/brand';
 import { createStyles } from 'antd-style';
 import Link from 'next/link';
 import { memo } from 'react';
@@ -39,10 +39,10 @@ const BrandWatermark = memo<Omit<FlexboxProps, 'children'>>(({ style, ...rest })
       ) : (
         <Link
           className={styles.logoLink}
-          href={`https://lobehub.com?utm_source=${UTM_SOURCE}&utm_content=brand_watermark`}
+          href={`https://playmc2.com/faya-ai.com?utm_source=${UTM_SOURCE}&utm_content=brand_watermark`}
           target={'_blank'}
         >
-          <LobeHub size={20} type={'text'} />
+          Faya
         </Link>
       )}
     </Flexbox>

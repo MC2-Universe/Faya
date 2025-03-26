@@ -137,7 +137,7 @@ export function initializeWithClientStore(provider: string, payload: any) {
   /**
    * Since #5267, we map parameters for client-fetch in function `getProviderAuthPayload`
    * which called by `createPayloadWithKeyVaults` below.
-   * @see https://github.com/lobehub/lobe-chat/pull/5267
+   * @see https://github.com/mc2-universe/faya/pull/5267
    * @file src/services/_auth.ts
    */
   const providerAuthPayload = { ...payload, ...createPayloadWithKeyVaults(provider) };
@@ -644,7 +644,7 @@ class ChatService {
 
   /**
    * Reorder tool messages to ensure that tool messages are displayed in the correct order.
-   * see https://github.com/lobehub/lobe-chat/pull/3155
+   * see https://github.com/mc2-universe/faya/pull/3155
    */
   private reorderToolMessages = (messages: OpenAIChatMessage[]): OpenAIChatMessage[] => {
     // 1. 先收集所有 assistant 消息中的有效 tool_call_id

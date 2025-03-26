@@ -243,7 +243,7 @@ describe('ChangelogService', () => {
       it('should generate correct URL', () => {
         // @ts-ignore - accessing private method for testing
         const result = service.genUrl('test/path');
-        expect(result).toBe('https://raw.githubusercontent.com/lobehub/lobe-chat/main/test/path');
+        expect(result).toBe('https://raw.githubusercontent.com/mc2-universe/faya/main/test/path');
       });
     });
 

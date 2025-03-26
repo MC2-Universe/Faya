@@ -69,7 +69,7 @@ export function LobeNextAuthDbAdapter(serverDB: NeonDatabase<typeof schema>): Ad
 
       // create a new user if it does not exist
       // Use id from provider if it exists, otherwise use id assigned by next-auth
-      // ref: https://github.com/lobehub/lobe-chat/pull/2935
+      // ref: https://github.com/mc2-universe/faya/pull/2935
       const uid = providerAccountId ?? id;
       await UserModel.createUser(
         serverDB,

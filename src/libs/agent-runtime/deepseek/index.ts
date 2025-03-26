@@ -13,7 +13,7 @@ export const LobeDeepSeekAI = LobeOpenAICompatibleFactory({
   baseURL: 'https://api.deepseek.com/v1',
   chatCompletion: {
     handlePayload: ({ frequency_penalty, messages, model, presence_penalty, temperature, top_p, ...payload }: ChatStreamPayload) => {
-      // github.com/lobehub/lobe-chat/pull/5548
+      // github.com/mc2-universe/faya/pull/5548
       let filteredMessages = messages.filter(message => message.role !== 'system');
 
       if (filteredMessages.length > 0 && filteredMessages[0].role === 'assistant') {

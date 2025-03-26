@@ -13,7 +13,7 @@ export interface SendMessageParams {
   files?: UploadFileItem[];
   /**
    *
-   * https://github.com/lobehub/lobe-chat/pull/2086
+   * https://github.com/mc2-universe/faya/pull/2086
    */
   isWelcomeQuestion?: boolean;
   message: string;

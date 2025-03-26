@@ -87,7 +87,7 @@ const InputArea = memo<InputAreaProps>(({ onSend, value, loading, onChange }) =>
           // eslint-disable-next-line unicorn/consistent-function-scoping
           const send = () => {
             // avoid inserting newline when sending message.
-            // refs: https://github.com/lobehub/lobe-chat/pull/989
+            // refs: https://github.com/mc2-universe/faya/pull/989
             e.preventDefault();
 
             onSend();

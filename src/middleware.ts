@@ -70,14 +70,14 @@ const defaultMiddleware = (request: NextRequest) => {
   });
 
   // if app is in docker, rewrite to self container
-  // https://github.com/lobehub/lobe-chat/issues/5876
+  // https://github.com/mc2-universe/faya/issues/5876
   if (appEnv.MIDDLEWARE_REWRITE_THROUGH_LOCAL) {
     url.protocol = 'http';
     url.host = '127.0.0.1';
     url.port = process.env.PORT || '3210';
   }
 
-  // refs: https://github.com/lobehub/lobe-chat/pull/5866
+  // refs: https://github.com/mc2-universe/faya/pull/5866
   // new handle segment rewrite: /${route}${originalPathname}
   // / -> /zh-CN__0__dark
   // /discover -> /zh-CN__0__dark/discover
@@ -101,7 +101,7 @@ const nextAuthMiddleware = NextAuthEdge.auth((req) => {
   const session = req.auth;
 
   // Check if next-auth throws errors
-  // refs: https://github.com/lobehub/lobe-chat/pull/1323
+  // refs: https://github.com/mc2-universe/faya/pull/1323
   const isLoggedIn = !!session?.expires;
 
   // Remove & amend OAuth authorized header
@@ -127,7 +127,7 @@ const clerkAuthMiddleware = clerkMiddleware(
     return defaultMiddleware(req);
   },
   {
-    // https://github.com/lobehub/lobe-chat/pull/3084
+    // https://github.com/mc2-universe/faya/pull/3084
     clockSkewInMs: 60 * 60 * 1000,
     signInUrl: '/login',
     signUpUrl: '/signup',

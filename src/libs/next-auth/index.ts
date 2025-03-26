@@ -22,7 +22,7 @@ const { NEXT_PUBLIC_ENABLED_SERVER_SERVICE } = getServerDBConfig();
  * you can import from `@/libs/next-auth/edge` which is not initial with the database adapter.
  *
  * The difference and usage of the two different NextAuth modules is can be
- * ref to: https://github.com/lobehub/lobe-chat/pull/2935
+ * ref to: https://github.com/mc2-universe/faya/pull/2935
  */
 export default NextAuth({
   ...config,

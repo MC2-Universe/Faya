@@ -120,7 +120,7 @@ describe('LobeNextAuthDbAdapter', () => {
 
       it('should create a user if id not exist and email is null', async () => {
         // In previous version, it will link the account to the existing user if the email is null
-        // issue: https://github.com/lobehub/lobe-chat/issues/4918
+        // issue: https://github.com/mc2-universe/faya/issues/4918
         expect(nextAuthAdapter).toBeDefined();
         expect(nextAuthAdapter.createUser).toBeDefined();
 
@@ -151,7 +151,7 @@ describe('LobeNextAuthDbAdapter', () => {
 
       it('should create a user if id not exist even email is invalid type', async () => {
         // In previous version, it will link the account to the existing user if the email is null
-        // issue: https://github.com/lobehub/lobe-chat/issues/4918
+        // issue: https://github.com/mc2-universe/faya/issues/4918
         expect(nextAuthAdapter).toBeDefined();
         expect(nextAuthAdapter.createUser).toBeDefined();
 

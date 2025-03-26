@@ -151,7 +151,7 @@ describe('LobeOpenAICompatibleFactory', () => {
         expect((await reader.read()).done).toBe(true);
       });
 
-      // https://github.com/lobehub/lobe-chat/issues/2752
+      // https://github.com/mc2-universe/faya/issues/2752
       it('should handle burn hair data chunks correctly', async () => {
         const chunks = [
           {

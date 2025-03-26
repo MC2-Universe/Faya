@@ -63,7 +63,7 @@ services:
     entrypoint: ['sh', '-c', 'npm run cli db seed -- --swe && npm start']
 
   lobe:
-    image: lobehub/lobe-chat-database
+    image: mc2-universe/faya-database
     container_name: lobe-chat
     network_mode: 'service:network-service'
     depends_on:
