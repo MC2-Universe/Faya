@@ -43,16 +43,16 @@ const useStyles = createStyles(({ css, token }) => ({
 
     background: ${token.colorBgElevated};
   `,
+  logo: css`
+    color: ${token.colorText};
+    fill: ${token.colorText};
+  `,
   text: css`
     text-align: center;
   `,
   title: css`
     margin: 0;
     color: ${token.colorTextHeading};
-  `,
-  logo: css`
-    color: ${token.colorText};
-    fill: ${token.colorText};
   `,
 }));
 
