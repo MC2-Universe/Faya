@@ -65,8 +65,8 @@ export const generateViewport = async (props: DynamicLayoutProps): ResolvingView
     initialScale: 1,
     minimumScale: 1,
     themeColor: [
-      { color: '#f8f8f8', media: '(prefers-color-scheme: light)' },
-      { color: '#000', media: '(prefers-color-scheme: dark)' },
+      { color: '#f1f1f1', media: '(prefers-color-scheme: light)' },
+      { color: '#112', media: '(prefers-color-scheme: dark)' },
     ],
     viewportFit: 'cover',
     width: 'device-width',
@@ -78,21 +78,6 @@ export const generateStaticParams = () => {
   const mobileOptions = [true, false];
   // only static for serveral page, other go to dynamtic
   const staticLocales: Locales[] = [DEFAULT_LANG, 'en-US'];
-  
-    const variants: { variants: string }[] = [];
-    
-      for (const locale of staticLocales) {
-          for (const theme of themes) {
-                for (const isMobile of mobileOptions) {
-                        variants.push({
-                                  variants: RouteVariants.serializeVariants({ isMobile, locale, theme }),
-                                          });
-                                                }
-                                                    }
-                                                      }
-                                                      
-                                                        return variants;
-                                                        };'];
 
   const variants: { variants: string }[] = [];
 
