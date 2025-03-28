@@ -7,7 +7,7 @@ import { isRtlLang } from 'rtl-detect';
 import Analytics from '@/components/Analytics';
 import { DEFAULT_LANG } from '@/const/locale';
 import PWAInstall from '@/features/PWAInstall';
-import AuthProvider from '@/layout/AuthProvider';
+import AuthProvider from '@/layout/AuthProvider'; 
 import GlobalProvider from '@/layout/GlobalProvider';
 import { Locales } from '@/locales/resources';
 import { DynamicLayoutProps } from '@/types/next';

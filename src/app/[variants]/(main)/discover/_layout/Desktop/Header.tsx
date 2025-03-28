@@ -9,6 +9,7 @@ import { isCustomBranding } from '@/const/version';
 
 import CreateButton from '../../features/CreateButton';
 import StoreSearchBar from '../../features/StoreSearchBar';
+import UserBanner from '../../../(mobile)/me/(home)/features/UserBanner';
 
 const Header = memo(() => {
   return (
@@ -29,6 +30,7 @@ const Header = memo(() => {
         right: { flex: 1, maxWidth: 240 },
       }}
     >
+      <UserBanner />
       <StoreSearchBar />
     </ChatHeader>
   );
