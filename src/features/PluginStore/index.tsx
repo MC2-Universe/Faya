@@ -2,7 +2,6 @@ import { Modal } from '@lobehub/ui';
 import { Segmented } from 'antd';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useRouter } from 'next/navigation';
 import { Flexbox } from 'react-layout-kit';
 
 import { useServerConfigStore } from '@/store/serverConfig';
