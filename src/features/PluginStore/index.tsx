@@ -36,6 +36,7 @@ export const PluginStore = memo<PluginStoreProps>(({ closePopover, setOpen, open
       footer={null}
       onCancel={() => {
         setOpen(false);
+        closePopover();
       }}
       open={open}
       styles={{ body: { overflow: 'hidden' } }}
