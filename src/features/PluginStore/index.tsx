@@ -2,22 +2,34 @@ import { Modal } from '@lobehub/ui';
 import { Segmented } from 'antd';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useRouter } from 'next/navigation';
 import { Flexbox } from 'react-layout-kit';
 
 import { useServerConfigStore } from '@/store/serverConfig';
 import { useToolStore } from '@/store/tool';
+import { enableAuth } from '@/const/auth';
+import { useUserStore } from '@/store/user';
+import { authSelectors } from '@/store/user/selectors';
 
 import InstalledPluginList from './InstalledPluginList';
 import OnlineList from './OnlineList';
+import UserLoginOrSignup from '../User/UserLoginOrSignup';
 
 interface PluginStoreProps {
   open?: boolean;
   setOpen: (open: boolean) => void;
+  closePopover: () => void;
 }
-export const PluginStore = memo<PluginStoreProps>(({ setOpen, open }) => {
+export const PluginStore = memo<PluginStoreProps>(({ setOpen, open, closePopover }) => {
+  const isLoginWithAuth = useUserStore(authSelectors.isLoginWithAuth);
+  const [openSignIn] = useUserStore((s) => [s.openLogin, s.logout]);
   const { t } = useTranslation('plugin');
   const mobile = useServerConfigStore((s) => s.isMobile);
   const [listType] = useToolStore((s) => [s.listType]);
+  const handleSignIn = () => {
+    openSignIn();
+    closePopover();
+  };
 
   return (
     <Modal
@@ -31,25 +43,29 @@ export const PluginStore = memo<PluginStoreProps>(({ setOpen, open }) => {
       title={t('store.title')}
       width={800}
     >
-      <Flexbox
-        gap={mobile ? 8 : 16}
-        style={{ maxHeight: mobile ? '-webkit-fill-available' : 'inherit' }}
-        width={'100%'}
-      >
-        <Segmented
-          block
-          onChange={(v) => {
-            useToolStore.setState({ listType: v as any });
-          }}
-          options={[
-            { label: t('store.tabs.all'), value: 'all' },
-            { label: t('store.tabs.installed'), value: 'installed' },
-          ]}
-          style={{ flex: 1 }}
-          value={listType}
-        />
-        {listType === 'all' ? <OnlineList /> : <InstalledPluginList />}
-      </Flexbox>
+      {!enableAuth || (enableAuth && isLoginWithAuth) ? (
+        <Flexbox
+          gap={mobile ? 8 : 16}
+          style={{ maxHeight: mobile ? '-webkit-fill-available' : 'inherit' }}
+          width={'100%'}
+        >
+          <Segmented
+            block
+            onChange={(v) => {
+              useToolStore.setState({ listType: v as any });
+            }}
+            options={[
+              { label: t('store.tabs.all'), value: 'all' },
+              { label: t('store.tabs.installed'), value: 'installed' },
+            ]}
+            style={{ flex: 1 }}
+            value={listType}
+          />
+          {listType === 'all' ? <OnlineList /> : <InstalledPluginList />}
+        </Flexbox>
+      ) : (
+        <UserLoginOrSignup onClick={handleSignIn} />
+      )}
     </Modal>
   );
 });
