@@ -114,9 +114,14 @@ const nextAuthMiddleware = NextAuthEdge.auth((req) => {
 });
 
 const isProtectedRoute = createRouteMatcher([
+  '/settings',
   '/settings(.*)',
   '/files(.*)',
   '/onboard(.*)',
+  '/discover',
+  '/discover(.*)',
+  '/chat',
+  '/chat(.*)',
   // ↓ cloud ↓
 ]);
 
