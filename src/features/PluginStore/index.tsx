@@ -15,19 +15,19 @@ import OnlineList from './OnlineList';
 import UserLoginOrSignup from '../User/UserLoginOrSignup';
 
 interface PluginStoreProps {
+  closePopover: () => void;
   open?: boolean;
   setOpen: (open: boolean) => void;
-  closePopover: () => void;
 }
-export const PluginStore = memo<PluginStoreProps>(({ setOpen, open, closePopover }) => {
+export const PluginStore = memo<PluginStoreProps>(({ closePopover, setOpen, open }) => {
   const isLoginWithAuth = useUserStore(authSelectors.isLoginWithAuth);
   const [openSignIn] = useUserStore((s) => [s.openLogin, s.logout]);
   const { t } = useTranslation('plugin');
   const mobile = useServerConfigStore((s) => s.isMobile);
   const [listType] = useToolStore((s) => [s.listType]);
   const handleSignIn = () => {
-    openSignIn();
     closePopover();
+    openSignIn();
   };
 
   return (
