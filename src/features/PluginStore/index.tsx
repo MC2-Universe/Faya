@@ -15,18 +15,17 @@ import OnlineList from './OnlineList';
 import UserLoginOrSignup from '../User/UserLoginOrSignup';
 
 interface PluginStoreProps {
-  closePopover: () => void;
   open?: boolean;
   setOpen: (open: boolean) => void;
 }
-export const PluginStore = memo<PluginStoreProps>(({ closePopover, setOpen, open }) => {
+export const PluginStore = memo<PluginStoreProps>(({ setOpen, open }) => {
   const isLoginWithAuth = useUserStore(authSelectors.isLoginWithAuth);
   const [openSignIn] = useUserStore((s) => [s.openLogin, s.logout]);
   const { t } = useTranslation('plugin');
   const mobile = useServerConfigStore((s) => s.isMobile);
   const [listType] = useToolStore((s) => [s.listType]);
   const handleSignIn = () => {
-    closePopover();
+    setOpen(false);
     openSignIn();
   };
 
@@ -36,7 +35,6 @@ export const PluginStore = memo<PluginStoreProps>(({ closePopover, setOpen, open
       footer={null}
       onCancel={() => {
         setOpen(false);
-        closePopover();
       }}
       open={open}
       styles={{ body: { overflow: 'hidden' } }}
