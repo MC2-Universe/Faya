@@ -28,8 +28,8 @@ describe('Ld', () => {
       const org = ld.genOrganization();
 
       expect(org['@type']).toBe('Organization');
-      expect(org.name).toBe('LobeHub');
-      expect(org.url).toBe('https://lobehub.com');
+      expect(org.name).toBe('Faya');
+      expect(org.url).toBe('https://faya.mc3.network');
     });
   });
 
@@ -79,7 +79,7 @@ describe('Ld', () => {
       const website = ld.genWebSite();
 
       expect(website['@type']).toBe('WebSite');
-      expect(website.name).toBe('LobeChat');
+      expect(website.name).toBe('Faya');
     });
   });
 

@@ -1,8 +1,8 @@
-name: lobe-chat-database
+name: faya-chat-database
 services:
   network-service:
     image: alpine
-    container_name: lobe-network
+    container_name: faya-network
     ports:
       - '${MINIO_PORT}:${MINIO_PORT}' # MinIO API
       - '9001:9001' # MinIO Console
@@ -11,11 +11,11 @@ services:
       - '${LOBE_PORT}:3210' # LobeChat
     command: tail -f /dev/null
     networks:
-      - lobe-network
+      - faya-network
 
   postgresql:
     image: pgvector/pgvector:pg16
-    container_name: lobe-postgres
+    container_name: faya-postgres
     ports:
       - '5432:5432'
     volumes:
@@ -30,11 +30,11 @@ services:
       retries: 5
     restart: always
     networks:
-      - lobe-network
+      - faya-network
 
   minio:
     image: minio/minio
-    container_name: lobe-minio
+    container_name: faya-minio
     network_mode: 'service:network-service'
     volumes:
       - './s3_data:/etc/minio/data'
@@ -49,7 +49,7 @@ services:
 
   logto:
     image: svhd/logto
-    container_name: lobe-logto
+    container_name: faya-logto
     network_mode: 'service:network-service'
     depends_on:
       postgresql:
@@ -62,9 +62,9 @@ services:
       - 'ADMIN_ENDPOINT=http://localhost:3002'
     entrypoint: ['sh', '-c', 'npm run cli db seed -- --swe && npm start']
 
-  lobe:
+  faya:
     image: mc2-universe/faya-database
-    container_name: lobe-chat
+    container_name: faya-chat
     network_mode: 'service:network-service'
     depends_on:
       postgresql:
@@ -99,5 +99,5 @@ volumes:
     driver: local
 
 networks:
-  lobe-network:
+  faya-network:
     driver: bridge

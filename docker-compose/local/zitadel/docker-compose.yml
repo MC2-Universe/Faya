@@ -1,8 +1,8 @@
-name: lobe-chat-database
+name: faya-chat-database
 services:
   network-service:
     image: alpine
-    container_name: lobe-network
+    container_name: faya-network
     ports:
       - '9000:9000' # MinIO API
       - '9001:9001' # MinIO Console
@@ -10,17 +10,17 @@ services:
       - '3210:3210' # LobeChat
     command: tail -f /dev/null
     networks:
-      - lobe-network
+      - faya-network
 
   postgresql:
     image: pgvector/pgvector:pg16
-    container_name: lobe-postgres
+    container_name: faya-postgres
     ports:
       - '5432:5432'
     volumes:
       - './data:/var/lib/postgresql/data'
     environment:
-      - 'POSTGRES_DB=lobechat'
+      - 'POSTGRES_DB=faya'
       - 'POSTGRES_PASSWORD=uWNZugjBqixf8dxC'
     healthcheck:
       test: ['CMD-SHELL', 'pg_isready -U postgres']
@@ -29,11 +29,11 @@ services:
       retries: 5
     restart: always
     networks:
-      - lobe-network
+      - faya-network
 
   minio:
     image: minio/minio
-    container_name: lobe-minio
+    container_name: faya-minio
     network_mode: 'service:network-service'
     volumes:
       - './s3_data:/etc/minio/data'
@@ -49,7 +49,7 @@ services:
   zitadel:
     restart: 'always'
     image: 'ghcr.io/zitadel/zitadel:latest'
-    container_name: lobe-zitadel
+    container_name: faya-zitadel
     network_mode: 'service:network-service'
     command: start-from-init --config /zitadel-config.yaml --steps /zitadel-init-steps.yaml --masterkey "cft3Tekr/rQBOqwoQSCPoncA9BHbn7QJ" --tlsMode disabled #MasterkeyNeedsToHave32Characters
     volumes:
@@ -59,9 +59,9 @@ services:
       postgresql:
         condition: service_healthy
 
-  lobe:
+  faya:
     image: mc2-universe/faya-database
-    container_name: lobe-chat
+    container_name: faya-chat
     network_mode: 'service:network-service'
     depends_on:
       postgresql:
@@ -82,5 +82,5 @@ volumes:
   s3_data:
     driver: local
 networks:
-  lobe-network:
+  faya-network:
     driver: bridge

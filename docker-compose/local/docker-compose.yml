@@ -1,8 +1,8 @@
-name: lobe-chat-database
+name: faya-chat-database
 services:
   network-service:
     image: alpine
-    container_name: lobe-network
+    container_name: faya-network
     restart: always
     ports:
       - '${MINIO_PORT}:${MINIO_PORT}' # MinIO API
@@ -11,11 +11,11 @@ services:
       - '${LOBE_PORT}:3210' # LobeChat
     command: tail -f /dev/null
     networks:
-      - lobe-network
+      - faya-network
 
   postgresql:
     image: pgvector/pgvector:pg17
-    container_name: lobe-postgres
+    container_name: faya-postgres
     ports:
       - '5432:5432'
     volumes:
@@ -30,11 +30,11 @@ services:
       retries: 5
     restart: always
     networks:
-      - lobe-network
+      - faya-network
 
   minio:
     image: minio/minio
-    container_name: lobe-minio
+    container_name: faya-minio
     network_mode: 'service:network-service'
     volumes:
       - './s3_data:/etc/minio/data'
@@ -60,7 +60,7 @@ services:
 
   casdoor:
     image: casbin/casdoor
-    container_name: lobe-casdoor
+    container_name: faya-casdoor
     entrypoint: /bin/sh -c './server --createDatabase=true'
     network_mode: 'service:network-service'
     depends_on:
@@ -79,20 +79,20 @@ services:
 
   searxng:
     image: searxng/searxng
-    container_name: lobe-searxng
+    container_name: faya-searxng
     volumes:
       - './searxng-settings.yml:/etc/searxng/settings.yml'
     environment:
       - 'SEARXNG_SETTINGS_FILE=/etc/searxng/settings.yml'
     restart: always
     networks:
-      - lobe-network
+      - faya-network
     env_file:
       - .env
 
-  lobe:
+  faya:
     image: mc2-universe/faya-database
-    container_name: lobe-chat
+    container_name: faya-chat
     network_mode: 'service:network-service'
     depends_on:
       postgresql:
@@ -168,5 +168,5 @@ volumes:
     driver: local
 
 networks:
-  lobe-network:
+  faya-network:
     driver: bridge

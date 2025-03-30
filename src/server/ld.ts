@@ -86,7 +86,7 @@ export class Ld {
     return {
       '@id': this.getId(OFFICIAL_URL, '#organization'),
       '@type': 'Organization',
-      'alternateName': 'LobeChat',
+      'alternateName': 'Faya',
       'contactPoint': {
         '@type': 'ContactPoint',
         'contactType': 'customer support',
@@ -106,9 +106,9 @@ export class Ld {
       'name': 'LobeHub',
       'sameAs': [
         X,
-        'https://github.com/lobehub',
-        'https://medium.com/@lobehub',
-        'https://www.youtube.com/@lobehub',
+        'https://github.com/mc2-universe',
+        'https://medium.com/@mc2-universe',
+        'https://www.youtube.com/@mc2-universe',
       ],
       'url': OFFICIAL_SITE,
     };
