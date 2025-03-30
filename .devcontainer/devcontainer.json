@@ -1,13 +1,11 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/typescript-node",
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
     "ghcr.io/devcontainers/features/github-cli:1": {},
-    "ghcr.io/shyim/devcontainers-features/bun:0": {},
-    "ghcr.io/devcontainers-extra/features/actions-runner:1": {},
-    "ghcr.io/devcontainers-extra/features/devcontainers-cli:1": {}
+    "ghcr.io/devcontainers-extra/features/devcontainers-cli:1": {},
+    "ghcr.io/devcontainers/features/node:1": {}
   },
-   // Use 'postCreateCommand' to run commands after the container is created.
+  "image": "mcr.microsoft.com/devcontainers/typescript-node",
+  // Use 'postCreateCommand' to run commands after the container is created.
   "postCreateCommand": "pnpm install"
-
 }

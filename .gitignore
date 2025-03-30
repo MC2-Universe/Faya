@@ -8,6 +8,8 @@
 .history
 .temp
 .env.local
+.env.development
+.env.production
 venv
 temp
 tmp

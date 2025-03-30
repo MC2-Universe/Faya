@@ -47,7 +47,7 @@ const MetaData = memo(() => {
                   zIndex: 10,
                 }}
               >
-                lobehub.com
+                faya.mc3.network
               </div>
               <Image
                 alt={'og'}
