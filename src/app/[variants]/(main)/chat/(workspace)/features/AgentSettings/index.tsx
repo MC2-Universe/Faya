@@ -43,7 +43,7 @@ const AgentSettings = memo(() => {
   ]);
   const isInbox = id === INBOX_SESSION_ID;
 
-  const [tab, setTab] = useState(isInbox ? ChatSettingsTabs.Prompt : ChatSettingsTabs.Meta);
+  const [tab, setTab] = useState(isInbox ? ChatSettingsTabs.Chat : ChatSettingsTabs.Meta);
 
   const ref = useRef<any>(null);
   const theme = useTheme();

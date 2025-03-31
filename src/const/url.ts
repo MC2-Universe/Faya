@@ -61,8 +61,8 @@ export const SESSION_CHAT_URL = (id: string = INBOX_SESSION_ID, mobile?: boolean
 export const imageUrl = (filename: string) => withBasePath(`/images/${filename}`);
 
 export const LOBE_URL_IMPORT_NAME = 'settings';
-export const EMAIL_SUPPORT = 'support@playmc2.com';
-export const EMAIL_BUSINESS = 'hello@playmc2.com';
+export const EMAIL_SUPPORT = 'support@mc3.network';
+export const EMAIL_BUSINESS = 'hello@mc3.network';
 
 export const MEDIDUM = 'https://medium.com/@playmc2';
 export const X = 'https://x.com/playmc2';

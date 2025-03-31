@@ -24,7 +24,7 @@ import { sessionMetaSelectors } from '@/store/session/selectors';
 
 const EditPage = memo(() => {
   const { t } = useTranslation('setting');
-  const [tab, setTab] = useState(ChatSettingsTabs.Prompt);
+  const [tab, setTab] = useState(ChatSettingsTabs.Chat);
 
   const [id, updateAgentMeta, title] = useSessionStore((s) => [
     s.activeId,

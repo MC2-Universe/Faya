@@ -39,7 +39,7 @@ const BrandWatermark = memo<Omit<FlexboxProps, 'children'>>(({ style, ...rest })
       ) : (
         <Link
           className={styles.logoLink}
-          href={`https://playmc2.com/faya-ai.com?utm_source=${UTM_SOURCE}&utm_content=brand_watermark`}
+          href={`https://mc3.network/faya-ai?utm_source=${UTM_SOURCE}&utm_content=brand_watermark`}
           target={'_blank'}
         >
           Faya
