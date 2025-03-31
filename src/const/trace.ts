@@ -1,4 +1,4 @@
-export const LOBE_CHAT_TRACE_HEADER = 'X-lobe-trace';
+export const LOBE_CHAT_TRACE_HEADER = 'X-faya-trace';
 export const LOBE_CHAT_TRACE_ID = 'X-faya-chat-trace-id';
 export const LOBE_CHAT_OBSERVATION_ID = 'X-faya-observation-id';
 
