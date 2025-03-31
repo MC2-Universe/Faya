@@ -56,6 +56,10 @@ ENV NEXT_PUBLIC_SERVICE_MODE="${NEXT_PUBLIC_SERVICE_MODE:-server}" \
     DATABASE_URL="postgres://postgres:password@localhost:5432/postgres" \
     KEY_VAULTS_SECRET="use-for-build"
 
+# Clerk Auth
+ENV NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY="pk_live_Y2xlcmsubWMzLm5ldHdvcmsk" \
+    NEXT_PUBLIC_ENABLE_NEXT_AUTH="0"
+
 # Sentry
 ENV NEXT_PUBLIC_SENTRY_DSN="${NEXT_PUBLIC_SENTRY_DSN}" \
     SENTRY_ORG="" \
@@ -170,10 +174,6 @@ ENV ACCESS_CODE="" \
 ENV KEY_VAULTS_SECRET="" \
     DATABASE_DRIVER="node" \
     DATABASE_URL=""
-
-# Clerk Auth
-ENV NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY="pk_live_Y2xlcmsubWMzLm5ldHdvcmsk" \
-    NEXT_PUBLIC_ENABLE_NEXT_AUTH=0
 
 # Next Auth
 ENV NEXT_AUTH_SECRET="" \
