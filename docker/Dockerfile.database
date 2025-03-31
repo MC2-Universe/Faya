@@ -171,6 +171,9 @@ ENV KEY_VAULTS_SECRET="" \
     DATABASE_DRIVER="node" \
     DATABASE_URL=""
 
+# Clerk Auth
+ENV NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY="pk_live_Y2xlcmsubWMzLm5ldHdvcmsk"
+
 # Next Auth
 ENV NEXT_AUTH_SECRET="" \
     NEXT_AUTH_SSO_PROVIDERS="" \
