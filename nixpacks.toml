@@ -1,4 +1,2 @@
-[phases.setup]
-    nixpkgsArchive = '0d1ef1a839ce0f3282bf24bea2788b9ad659be83'
 [phases.install]
     cmds = ["npm install -g corepack", "corepack enable", "corepack prepare pnpm@9.1.0 --activate", "pnpm install"]
