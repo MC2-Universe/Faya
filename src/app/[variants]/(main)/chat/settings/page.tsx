@@ -39,7 +39,7 @@ const EditPage = memo(() => {
 
   const { isLoading } = useInitAgentConfig();
 
-  const { enablePlugins } = useServerConfigStore(featureFlagsSelectors);
+  const { enablePlugins, hideDocs } = useServerConfigStore(featureFlagsSelectors);
 
   return (
     <>
@@ -47,10 +47,10 @@ const EditPage = memo(() => {
 
       <TabsNav
         items={[
-          {
+          (!!hideDocs && {
             key: ChatSettingsTabs.Prompt,
             label: t('settingAgent.prompt.title'),
-          },
+          }) as any,
           (id !== INBOX_SESSION_ID && {
             key: ChatSettingsTabs.Meta,
             label: t('settingAgent.title'),

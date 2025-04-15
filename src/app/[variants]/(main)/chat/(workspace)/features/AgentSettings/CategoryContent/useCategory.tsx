@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import type { MenuProps } from '@/components/Menu';
 import { INBOX_SESSION_ID } from '@/const/session';
 import { ChatSettingsTabs } from '@/store/global/initialState';
+import { featureFlagsSelectors, useServerConfigStore } from '@/store/serverConfig';
 import { useSessionStore } from '@/store/session';
 
 interface UseCategoryOptions {
@@ -18,6 +19,7 @@ export const useCategory = ({ mobile }: UseCategoryOptions = {}) => {
   const iconSize = mobile ? { fontSize: 20 } : undefined;
   const id = useSessionStore((s) => s.activeId);
   const isInbox = id === INBOX_SESSION_ID;
+  const { hideDocs } = useServerConfigStore(featureFlagsSelectors);
 
   const cateItems: MenuProps['items'] = useMemo(
     () =>
@@ -27,11 +29,11 @@ export const useCategory = ({ mobile }: UseCategoryOptions = {}) => {
           key: ChatSettingsTabs.Meta,
           label: t('agentTab.meta'),
         }) as MenuItemType,
-        {
+        (!!hideDocs && {
           icon: <Icon icon={Bot} size={iconSize} />,
           key: ChatSettingsTabs.Prompt,
           label: t('agentTab.prompt'),
-        },
+        }) as MenuItemType,
         {
           icon: <Icon icon={MessagesSquare} size={iconSize} />,
           key: ChatSettingsTabs.Chat,
