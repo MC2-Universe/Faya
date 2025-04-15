@@ -47,7 +47,7 @@ const EditPage = memo(() => {
 
       <TabsNav
         items={[
-          (!!hideDocs && {
+          (!hideDocs && {
             key: ChatSettingsTabs.Prompt,
             label: t('settingAgent.prompt.title'),
           }) as any,

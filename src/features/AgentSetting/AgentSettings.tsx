@@ -15,7 +15,7 @@ export const AgentSettings = (props: AgentSettingsProps) => {
   const { enablePlugins, hideDocs } = useServerConfigStore(featureFlagsSelectors);
   return (
     <AgentSettingsProvider {...props}>
-      {!!hideDocs && <AgentPrompt />}
+      {!hideDocs && <AgentPrompt />}
       <AgentMeta />
       <AgentChat />
       <AgentModal />

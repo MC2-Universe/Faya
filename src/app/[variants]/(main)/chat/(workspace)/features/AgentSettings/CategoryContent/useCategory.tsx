@@ -29,7 +29,7 @@ export const useCategory = ({ mobile }: UseCategoryOptions = {}) => {
           key: ChatSettingsTabs.Meta,
           label: t('agentTab.meta'),
         }) as MenuItemType,
-        (!!hideDocs && {
+        (!hideDocs && {
           icon: <Icon icon={Bot} size={iconSize} />,
           key: ChatSettingsTabs.Prompt,
           label: t('agentTab.prompt'),
