@@ -12,10 +12,10 @@ import { StoreUpdaterProps } from './StoreUpdater';
 type AgentSettingsProps = StoreUpdaterProps;
 
 export const AgentSettings = (props: AgentSettingsProps) => {
-  const { enablePlugins } = useServerConfigStore(featureFlagsSelectors);
+  const { enablePlugins, hideDocs } = useServerConfigStore(featureFlagsSelectors);
   return (
     <AgentSettingsProvider {...props}>
-      <AgentPrompt />
+      {!!hideDocs && <AgentPrompt />}
       <AgentMeta />
       <AgentChat />
       <AgentModal />
