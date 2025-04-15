@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { memo } from 'react';
 import { Flexbox, FlexboxProps } from 'react-layout-kit';
 
-import { ORG_NAME } from '@/const/branding';
+import { PURPOSE_NAME } from '@/const/branding';
 import { UTM_SOURCE } from '@/const/url';
 import { isCustomORG } from '@/const/version';
 
@@ -35,7 +35,7 @@ const BrandWatermark = memo<Omit<FlexboxProps, 'children'>>(({ style, ...rest })
     >
       <span>Powered by</span>
       {isCustomORG ? (
-        <span>{ORG_NAME}</span>
+        <span>{PURPOSE_NAME}</span>
       ) : (
         <Link
           className={styles.logoLink}

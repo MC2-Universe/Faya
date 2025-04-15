@@ -47,7 +47,7 @@ const MetaData = memo(() => {
                   zIndex: 10,
                 }}
               >
-                faya.mc3.network
+                faya.chat
               </div>
               <Image
                 alt={'og'}

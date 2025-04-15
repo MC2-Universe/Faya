@@ -12,6 +12,7 @@ import { useAgentStore } from '@/store/agent';
 import { agentSelectors } from '@/store/agent/selectors';
 import { useChatStore } from '@/store/chat';
 import { chatSelectors, topicSelectors } from '@/store/chat/selectors';
+import { featureFlagsSelectors, useServerConfigStore } from '@/store/serverConfig';
 import { exportFile } from '@/utils/client/exportFile';
 
 import { useStyles } from '../style';
@@ -27,18 +28,19 @@ const DEFAULT_FIELD_VALUE: FieldType = {
 };
 
 const ShareText = memo(() => {
+  const { hideDocs } = useServerConfigStore(featureFlagsSelectors);
   const [fieldValue, setFieldValue] = useState(DEFAULT_FIELD_VALUE);
   const { t } = useTranslation(['chat', 'common']);
   const { styles } = useStyles();
   const { message } = App.useApp();
   const settings: FormItemProps[] = [
-    {
+    (!hideDocs && {
       children: <Switch />,
       label: t('shareModal.withSystemRole'),
       minWidth: undefined,
       name: 'withSystemRole',
       valuePropName: 'checked',
-    },
+    }) as any,
     {
       children: <Switch />,
       label: t('shareModal.withRole'),

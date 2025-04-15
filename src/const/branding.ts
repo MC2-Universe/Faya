@@ -8,6 +8,7 @@ export const BRANDING_NAME = 'Faya';
 export const BRANDING_LOGO_URL = '/favicon.svg';
 
 export const ORG_NAME = 'MC2';
+export const PURPOSE_NAME = '🤍';
 
 export const BRANDING_URL = {
   help: undefined,

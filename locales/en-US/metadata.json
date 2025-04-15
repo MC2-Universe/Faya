@@ -5,7 +5,7 @@
   },
   "chat": {
     "description": "{{appName}} brings you the best UI experience for ChatGPT, Claude, Gemini, and OLLaMA.",
-    "title": "{{appName}}: Your personal AI productivity tool for a smarter brain."
+    "title": "{{appName}}: Kind, autonomous AI for everyone"
   },
   "discover": {
     "assistants": {
@@ -34,6 +34,6 @@
   },
   "welcome": {
     "description": "{{appName}} brings you the best UI experience for ChatGPT, Claude, Gemini, and OLLaMA.",
-    "title": "Welcome to {{appName}}: Your personal AI productivity tool for a smarter brain."
+    "title": "Welcome to {{appName}}: Kind, autonomous AI for everyone"
   }
 }

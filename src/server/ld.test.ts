@@ -29,7 +29,7 @@ describe('Ld', () => {
 
       expect(org['@type']).toBe('Organization');
       expect(org.name).toBe('Faya');
-      expect(org.url).toBe('https://faya.mc3.network');
+      expect(org.url).toBe('https://faya.chat');
     });
   });
 

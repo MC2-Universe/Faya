@@ -9,6 +9,7 @@ import urlJoin from 'url-join';
 
 import { BRANDING_NAME } from '@/const/branding';
 import { OFFICIAL_SITE, X } from '@/const/url';
+import { featureFlagsSelectors, useServerConfigStore } from '@/store/serverConfig';
 
 import GridLayout from './GridLayout';
 
@@ -16,6 +17,8 @@ const Hero = memo(() => {
   const { t } = useTranslation('changelog');
   const theme = useTheme();
   const { mobile } = useResponsive();
+  const { hideDocs } = useServerConfigStore(featureFlagsSelectors);
+
   return (
     <GridLayout>
       <Flexbox gap={16} style={{ paddingTop: 32, zIndex: 1 }}>
@@ -23,15 +26,17 @@ const Hero = memo(() => {
         <div style={{ fontSize: mobile ? 18 : 24, opacity: 0.6 }}>
           {t('description', { appName: BRANDING_NAME })}
         </div>
-        <Flexbox gap={8} horizontal style={{ fontSize: 16 }}>
-          <Link href={urlJoin(OFFICIAL_SITE, '/changelog/versions')} target={'_blank'}>
-            {t('actions.versions')}
-          </Link>
-          <div style={{ color: theme.colorInfo }}>·</div>
-          <Link href={X} target={'_blank'}>
-            {t('actions.followOnX')}
-          </Link>
-        </Flexbox>
+        {hideDocs && (
+          <Flexbox gap={8} horizontal style={{ fontSize: 16 }}>
+            <Link href={urlJoin(OFFICIAL_SITE, '/changelog/versions')} target={'_blank'}>
+              {t('actions.versions')}
+            </Link>
+            <div style={{ color: theme.colorInfo }}>·</div>
+            <Link href={X} target={'_blank'}>
+              {t('actions.followOnX')}
+            </Link>
+          </Flexbox>
+        )}
       </Flexbox>
     </GridLayout>
   );

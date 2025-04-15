@@ -5,7 +5,7 @@ import { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { HEADER_ICON_SIZE } from '@/const/layoutTokens';
-import { useServerConfigStore } from '@/store/serverConfig';
+import { featureFlagsSelectors, useServerConfigStore } from '@/store/serverConfig';
 
 import SubmitAgentModal from './SubmitAgentModal';
 
@@ -13,8 +13,9 @@ const SubmitAgentButton = memo<{ modal?: boolean }>(({ modal }) => {
   const { t } = useTranslation('setting');
   const mobile = useServerConfigStore((s) => s.isMobile);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { hideDocs } = useServerConfigStore(featureFlagsSelectors);
 
-  return (
+  return hideDocs ? null : (
     <>
       {modal ? (
         <Button block icon={<Icon icon={Share2} />} onClick={() => setIsModalOpen(true)}>

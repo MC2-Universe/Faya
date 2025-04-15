@@ -1,4 +1,3 @@
-import { Github } from '@lobehub/icons';
 import { Grid } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import { memo } from 'react';
@@ -140,16 +139,7 @@ const Preview = memo(() => {
               <TotalWords inShare />
             </Grid>
           </Flexbox>
-          <div className={styles.footer}>
-            {isOfficial ? (
-              OFFICIAL_URL
-            ) : (
-              <Flexbox align={'center'} gap={8} horizontal>
-                <Github size={16} />
-                <span>mc2-universe/faya</span>
-              </Flexbox>
-            )}
-          </div>
+          <div className={styles.footer}>{isOfficial ? OFFICIAL_URL : OFFICIAL_URL}</div>
         </Center>
       </div>
     </div>

@@ -9,9 +9,9 @@ import { INBOX_SESSION_ID } from './session';
 
 export const UTM_SOURCE = 'chat_preview';
 
-export const OFFICIAL_URL = 'https://faya.mc3.network/';
-export const OFFICIAL_PREVIEW_URL = 'https://faya.mc3.network';
-export const OFFICIAL_SITE = 'https://mc3.network';
+export const OFFICIAL_URL = 'https://faya.chat/';
+export const OFFICIAL_PREVIEW_URL = 'https://faya.chat';
+export const OFFICIAL_SITE = 'https://faya.chat';
 
 export const OG_URL = '/og/cover.png?v=1';
 
@@ -61,11 +61,11 @@ export const SESSION_CHAT_URL = (id: string = INBOX_SESSION_ID, mobile?: boolean
 export const imageUrl = (filename: string) => withBasePath(`/images/${filename}`);
 
 export const LOBE_URL_IMPORT_NAME = 'settings';
-export const EMAIL_SUPPORT = 'support@mc3.network';
-export const EMAIL_BUSINESS = 'hello@mc3.network';
+export const EMAIL_SUPPORT = 'support@faya.chat';
+export const EMAIL_BUSINESS = 'hello@faya.chat';
 
-export const MEDIDUM = 'https://medium.com/@playmc2';
-export const X = 'https://x.com/playmc2';
+export const MEDIDUM = 'https://medium.com/@faya.ai';
+export const X = 'https://x.com/faya.ai';
 export const RELEASES_URL = urlJoin(GITHUB, 'releases');
 
 export const mailTo = (email: string) => `mailto:${email}`;

@@ -27,8 +27,8 @@ describe('getCanonicalUrl', () => {
 
     const { getCanonicalUrl } = await import('./url'); // 动态导入以获取最新的环境变量状态
     const result = getCanonicalUrl('path', 'to', 'page');
-    expect(result).toBe('https://faya.mc3.network/path/to/page');
-    expect(urlJoin).toHaveBeenCalledWith('https://faya.mc3.network', 'path', 'to', 'page');
+    expect(result).toBe('https://faya.chat/path/to/page');
+    expect(urlJoin).toHaveBeenCalledWith('https://faya.chat', 'path', 'to', 'page');
   });
 
   it('should return correct URL for Vercel preview environment', async () => {
@@ -48,14 +48,14 @@ describe('getCanonicalUrl', () => {
 
     const { getCanonicalUrl } = await import('./url'); // 动态导入
     const result = getCanonicalUrl('path', 'to', 'page');
-    expect(result).toBe('https://faya.mc3.network/path/to/page');
-    expect(urlJoin).toHaveBeenCalledWith('https://faya.mc3.network', 'path', 'to', 'page');
+    expect(result).toBe('https://faya.chat/path/to/page');
+    expect(urlJoin).toHaveBeenCalledWith('https://faya.chat', 'path', 'to', 'page');
   });
 
   it('should work correctly without additional path arguments', async () => {
     const { getCanonicalUrl } = await import('./url'); // 动态导入
     const result = getCanonicalUrl();
-    expect(result).toBe('https://faya.mc3.network');
-    expect(urlJoin).toHaveBeenCalledWith('https://faya.mc3.network');
+    expect(result).toBe('https://faya.chat');
+    expect(urlJoin).toHaveBeenCalledWith('https://faya.chat');
   });
 });

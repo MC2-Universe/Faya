@@ -23,7 +23,7 @@
     "url": "https://github.com/mc2-universe/faya.git"
   },
   "license": "MIT",
-  "author": "Faya@MC2 <faya@mc3.network>",
+  "author": "Faya <faya@faya.chat>",
   "sideEffects": false,
   "workspaces": [
     "packages/*"

@@ -9,6 +9,7 @@ import { FORM_STYLE } from '@/const/layoutTokens';
 import { useImgToClipboard } from '@/hooks/useImgToClipboard';
 import { useIsMobile } from '@/hooks/useIsMobile';
 import { ImageType, imageTypeOptions, useScreenshot } from '@/hooks/useScreenshot';
+import { featureFlagsSelectors, useServerConfigStore } from '@/store/serverConfig';
 import { useSessionStore } from '@/store/session';
 import { sessionMetaSelectors } from '@/store/session/selectors';
 
@@ -25,6 +26,7 @@ const DEFAULT_FIELD_VALUE: FieldType = {
 };
 
 const ShareImage = memo<{ mobile?: boolean }>(({ mobile }) => {
+  const { hideDocs } = useServerConfigStore(featureFlagsSelectors);
   const currentAgentTitle = useSessionStore(sessionMetaSelectors.currentAgentTitle);
   const [fieldValue, setFieldValue] = useState<FieldType>(DEFAULT_FIELD_VALUE);
   const { t } = useTranslation(['chat', 'common']);
@@ -38,13 +40,13 @@ const ShareImage = memo<{ mobile?: boolean }>(({ mobile }) => {
     width: mobile ? 720 : undefined,
   });
   const settings: FormItemProps[] = [
-    {
+    (!hideDocs && {
       children: <Switch />,
       label: t('shareModal.withSystemRole'),
       minWidth: undefined,
       name: 'withSystemRole',
       valuePropName: 'checked',
-    },
+    }) as any,
     {
       children: <Switch />,
       label: t('shareModal.withBackground'),

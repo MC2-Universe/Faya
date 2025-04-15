@@ -29,6 +29,7 @@ const nextConfig: NextConfig = {
       allowedOrigins: [
         'localhost:3010',
         'potential-goggles-4qw66xpxjcwxj-3010.app.github.dev',
+        'faya.chat',
         'faya.mc3.network',
       ],
     },

@@ -22,7 +22,7 @@ const genPluginTable = (data: DataItem[], lang?: string) => {
       [
         genLink(
           item.meta.title.replaceAll('|', ','),
-          urlJoin('https://faya.mc3.network/discover/plugin', item.identifier),
+          urlJoin('https://faya.chat/discover/plugin', item.identifier),
         ),
         `<sup>By **${item.author}** on **${item.createdAt}**</sup>`,
       ].join('<br/>'),
@@ -41,7 +41,7 @@ const runPluginTable = async (lang?: string) => {
     md,
     [
       mdTable,
-      `> 📊 Total plugins: ${genLink(`<kbd>**${data.length}**</kbd>`, 'https://faya.mc3.network/discover/plugins')}`,
+      `> 📊 Total plugins: ${genLink(`<kbd>**${data.length}**</kbd>`, 'https://faya.chat/discover/plugins')}`,
     ].join('\n\n'),
   );
   writeReadme(newMd, lang);
