@@ -9,7 +9,7 @@ export const DEFAULT_LLM_CONFIG = genUserLLMConfig({
     fetchOnClient: true,
   },
   ollama: {
-    enabled: true,
+    enabled: false,
     fetchOnClient: true,
   },
   openai: {
@@ -17,7 +17,7 @@ export const DEFAULT_LLM_CONFIG = genUserLLMConfig({
   },
 });
 
-export const DEFAULT_MODEL = 'llama-3.1-8b-instant';
+export const DEFAULT_MODEL = 'llama-3.3-70b-versatile';
 
 export const DEFAULT_EMBEDDING_MODEL = 'text-embedding-3-small';
 export const DEFAULT_EMBEDDING_PROVIDER = ModelProvider.OpenAI;
