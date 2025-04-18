@@ -41,6 +41,12 @@ export const config = {
   ],
 };
 
+// Function to get URL parameters
+const getURLParameter = (param: string) => {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
+};
+
 const defaultMiddleware = (request: NextRequest) => {
   const url = new URL(request.url);
 
@@ -62,9 +68,13 @@ const defaultMiddleware = (request: NextRequest) => {
 
   const device = new UAParser(ua || '').getDevice();
 
+  // Get the URL parameter value
+  const overrideParam = getURLParameter('ua');
+  const overrideIsMobile = overrideParam === 'mobile';
+
   // 2. 创建规范化的偏好值
   const route = RouteVariants.serializeVariants({
-    isMobile: device.type === 'mobile',
+    isMobile: overrideParam ? overrideIsMobile : device.type === 'mobile',
     locale,
     theme,
   });
@@ -117,11 +127,14 @@ const isProtectedRoute = createRouteMatcher([
   '/settings',
   '/settings(.*)',
   '/files(.*)',
+  '/repos(.*)',
   '/onboard(.*)',
   '/discover',
   '/discover(.*)',
   '/chat',
   '/chat(.*)',
+  '/me',
+  '/me(.*)',
   // ↓ cloud ↓
 ]);
 

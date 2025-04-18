@@ -21,7 +21,7 @@ const SUPPORTED_THEMES = ['dark', 'light'] as const;
 export const DEFAULT_VARIANTS: IRouteVariants = {
   isMobile: false,
   locale: DEFAULT_LANG,
-  theme: 'light',
+  theme: 'dark',
 };
 
 const SPLITTER = '__';

@@ -1,6 +1,6 @@
 import { Icon, MobileTabBar, type MobileTabBarProps } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
-import { Bot, MessageSquare, User } from 'lucide-react';
+import { Bot, FolderClosed, MessageSquare, User } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { rgba } from 'polished';
 import { memo, useMemo } from 'react';
@@ -29,7 +29,7 @@ export default memo<Props>(({ className, tabBarKey }) => {
   const openSettings = () => {
     router.push('/settings/llm');
   };
-  const { showMarket } = useServerConfigStore(featureFlagsSelectors);
+  const { showMarket, enableKnowledgeBase } = useServerConfigStore(featureFlagsSelectors);
 
   const items: MobileTabBarProps['items'] = useMemo(
     () =>
@@ -43,6 +43,16 @@ export default memo<Props>(({ className, tabBarKey }) => {
             router.push('/chat');
           },
           title: t('tab.chat'),
+        },
+        enableKnowledgeBase && {
+          icon: (active: boolean) => (
+            <Icon className={active ? styles.active : undefined} icon={FolderClosed} />
+          ),
+          key: SidebarTabKey.Files,
+          onClick: () => {
+            router.push('/files?ua=console');
+          },
+          title: t('tab.files'),
         },
         showMarket && {
           icon: (active: boolean) => (
