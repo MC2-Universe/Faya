@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { Center, Flexbox } from 'react-layout-kit';
 
 import { useCreateNewModal } from '@/features/KnowledgeBaseModal';
+import { useIsMobile } from '@/hooks/useIsMobile';
 import { useFileStore } from '@/store/file';
 
 const ICON_SIZE = 80;
@@ -68,6 +69,8 @@ const EmptyStatus = ({ showKnowledgeBase, knowledgeBaseId }: EmptyStatusProps) =
   const { t } = useTranslation('components');
   const theme = useTheme();
   const { styles } = useStyles();
+  const mobile = useIsMobile();
+  const direction = mobile ? 'vertical' : 'horizontal';
 
   const pushDockFileList = useFileStore((s) => s.pushDockFileList);
 
@@ -79,7 +82,7 @@ const EmptyStatus = ({ showKnowledgeBase, knowledgeBaseId }: EmptyStatusProps) =
         <Typography.Title level={4}>{t('FileManager.emptyStatus.title')}</Typography.Title>
         <Typography.Text type={'secondary'}>{t('FileManager.emptyStatus.or')}</Typography.Text>
       </Flexbox>
-      <Flexbox gap={12} horizontal>
+      <Flexbox direction={direction} gap={12}>
         {showKnowledgeBase && (
           <Flexbox
             className={styles.card}

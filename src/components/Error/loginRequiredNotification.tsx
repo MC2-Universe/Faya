@@ -1,7 +1,7 @@
-import { FluentEmoji } from '@lobehub/ui';
 import { t } from 'i18next';
 
 import { notification } from '@/components/AntdStaticMethods';
+import { ProductLogo } from '@/components/Branding';
 
 import RedirectLogin from './RedirectLogin';
 
@@ -10,7 +10,7 @@ export const loginRequired = {
     notification.error({
       description: <RedirectLogin timeout={timeout} />,
       duration: timeout / 1000,
-      icon: <FluentEmoji emoji={'🧬'} size={24} />,
+      icon: <ProductLogo size={24} />,
       message: t('loginRequired.title', { ns: 'error' }),
       showProgress: true,
       type: 'warning',
