@@ -41,14 +41,9 @@ export const config = {
   ],
 };
 
-// Function to get URL parameters
-const getURLParameter = (param: string) => {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(param);
-};
-
 const defaultMiddleware = (request: NextRequest) => {
   const url = new URL(request.url);
+  const uaParam = request.nextUrl.searchParams.get('ua');
 
   // skip all api requests
   if (['/api', '/trpc', '/webapi'].some((path) => url.pathname.startsWith(path))) {
@@ -69,12 +64,11 @@ const defaultMiddleware = (request: NextRequest) => {
   const device = new UAParser(ua || '').getDevice();
 
   // Get the URL parameter value
-  const overrideParam = getURLParameter('ua');
-  const overrideIsMobile = overrideParam === 'mobile';
+  const overrideIsMobile = uaParam === 'mobile';
 
   // 2. 创建规范化的偏好值
   const route = RouteVariants.serializeVariants({
-    isMobile: overrideParam ? overrideIsMobile : device.type === 'mobile',
+    isMobile: uaParam ? overrideIsMobile : device.type === 'mobile',
     locale,
     theme,
   });
