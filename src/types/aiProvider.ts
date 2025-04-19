@@ -24,6 +24,7 @@ export const AiProviderSDKEnum = {
    */
   Doubao: 'doubao',
   Google: 'google',
+  Groq: 'groq',
   Huggingface: 'huggingface',
   Ollama: 'ollama',
   Openai: 'openai',
@@ -96,7 +97,7 @@ const AiProviderSettingsSchema = z.object({
     })
     .or(z.literal(false))
     .optional(),
-  sdkType: z.enum(['anthropic', 'openai', 'ollama']).optional(),
+  sdkType: z.enum(['groq']).optional(),
   searchMode: z.enum(['params', 'internal']).optional(),
   showAddNewModel: z.boolean().optional(),
   showApiKey: z.boolean().optional(),
@@ -119,7 +120,7 @@ export const CreateAiProviderSchema = z.object({
   keyVaults: z.any().optional(),
   logo: z.string().optional(),
   name: z.string(),
-  sdkType: z.enum(['openai', 'anthropic']).optional(),
+  sdkType: z.enum(['groq']).optional(),
   settings: AiProviderSettingsSchema.optional(),
   source: z.enum(['builtin', 'custom']),
   // checkModel: z.string().optional(),
@@ -201,7 +202,7 @@ export const UpdateAiProviderSchema = z.object({
   description: z.string().nullable().optional(),
   logo: z.string().nullable().optional(),
   name: z.string(),
-  sdkType: z.enum(['openai', 'anthropic']).optional(),
+  sdkType: z.enum(['groq']).optional(),
   settings: AiProviderSettingsSchema.optional(),
 });
 
