@@ -52,7 +52,7 @@ export default memo<Props>(({ className, tabBarKey }) => {
           onClick: () => {
             router.push('/files?ua=console');
           },
-          title: t('tab.files'),
+          title: t('tab.mobileFiles'),
         },
         showMarket && {
           icon: (active: boolean) => (
