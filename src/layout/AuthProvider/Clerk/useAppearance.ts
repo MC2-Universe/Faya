@@ -104,9 +104,9 @@ export const useAppearance = () => {
     elements: styles,
     layout: {
       helpPageUrl: BRANDING_URL.help ?? 'https://faya.chat/docs',
-      privacyPageUrl: BRANDING_URL.privacy ?? 'https://mc3.network/privacy',
+      privacyPageUrl: BRANDING_URL.privacy ?? 'https://faya.chat/privacy',
       socialButtonsVariant: 'blockButton',
-      termsPageUrl: BRANDING_URL.terms ?? 'https://mc3.network/terms',
+      termsPageUrl: BRANDING_URL.terms ?? 'https://faya.chat/terms',
     },
     variables: {
       borderRadius: `${theme.borderRadius}px`,

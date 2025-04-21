@@ -33,6 +33,8 @@ export const config = {
     '/profile(.*)',
     '/me',
     '/me(.*)',
+    '/privacy',
+    '/terms',
 
     '/login(.*)',
     '/signup(.*)',

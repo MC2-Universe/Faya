@@ -56,7 +56,7 @@ const NavBar = memo(() => {
           onClick: () => {
             router.push('/files?ua=console');
           },
-          title: t('tab.mobileFiles'),
+          title: t('tab.files'),
         },
         showMarket && {
           icon: (active: boolean) => (
