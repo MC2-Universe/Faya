@@ -5,35 +5,24 @@ type: Bug
 body:
   - type: dropdown
     attributes:
-      label: '📦 Platform'
-      multiple: true
+      label: '📌 Version'
+      multiple: false
       options:
         - 'Official Preview'
-        - 'Official Cloud'
-        - 'Vercel'
-        - 'Zeabur'
-        - 'Sealos'
-        - 'Netlify'
-        - 'Self hosting Docker'
-        - 'Other'
     validations:
       required: true
   - type: dropdown
     attributes:
-      label: '📦 Deploymenet mode'
+      label: '📦 Feature'
       multiple: true
       options:
-        - 'client db (lobe-chat image)'
-        - 'client pgelite db (lobe-chat-pglite image)'
-        - 'server db(lobe-chat-database image)'
+        - 'Chat'
+        - 'Knowledgebase'
+        - 'Profile'
+        - 'Settings'
+        - 'Other'
     validations:
       required: true
-  - type: input
-    attributes:
-      label: '📌 Version'
-    validations:
-      required: true
-
   - type: dropdown
     attributes:
       label: '💻 Operating System'

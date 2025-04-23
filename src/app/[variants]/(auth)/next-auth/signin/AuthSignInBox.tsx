@@ -106,9 +106,9 @@ export default memo(() => {
 
   const footerBtns = [
     { href: OFFICIAL_PREVIEW_URL, id: 0, label: t('backButton') },
-    { href: DOCUMENTS_REFER_URL, id: 0, label: t('footerPageLink__help') },
-    { href: PRIVACY_URL, id: 1, label: t('footerPageLink__privacy') },
-    { href: TERMS_URL, id: 2, label: t('footerPageLink__terms') },
+    { href: DOCUMENTS_REFER_URL, id: 1, label: t('footerPageLink__help') },
+    { href: PRIVACY_URL, id: 2, label: t('footerPageLink__privacy') },
+    { href: TERMS_URL, id: 3, label: t('footerPageLink__terms') },
   ];
 
   return (

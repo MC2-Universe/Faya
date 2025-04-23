@@ -6,8 +6,6 @@ import { memo } from 'react';
 
 import ErrorCapture from '@/components/Error';
 
-import AuthSignInBox from '../signin/AuthSignInBox';
-
 enum ErrorEnum {
   AccessDenied = 'AccessDenied',
   Configuration = 'Configuration',
@@ -34,10 +32,5 @@ export default memo(() => {
     reset: () => signIn(undefined, { callbackUrl: '/' }),
   };
   console.log('[NextAuth] Error:', props.error);
-  return (
-    <>
-      <ErrorCapture {...props} />
-      <AuthSignInBox />
-    </>
-  );
+  return <ErrorCapture {...props} />;
 });
