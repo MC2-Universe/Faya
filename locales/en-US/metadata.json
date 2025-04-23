@@ -4,7 +4,7 @@
     "title": "Changelog"
   },
   "chat": {
-    "description": "{{appName}} brings you the best UI experience for ChatGPT, Claude, Gemini, and OLLaMA.",
+    "description": "{{appName}}: Kind, autonomous AI for everyone",
     "title": "{{appName}}: Kind, autonomous AI for everyone"
   },
   "discover": {
@@ -33,7 +33,7 @@
     "title": "Plugin Marketplace"
   },
   "welcome": {
-    "description": "{{appName}} brings you the best UI experience for ChatGPT, Claude, Gemini, and OLLaMA.",
+    "description": "{{appName}}: Kind, autonomous AI for everyone",
     "title": "Welcome to {{appName}}: Kind, autonomous AI for everyone"
   }
 }

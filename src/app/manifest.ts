@@ -1,12 +1,12 @@
 import { kebabCase } from 'lodash-es';
 import type { MetadataRoute } from 'next';
 
-import { BRANDING_LOGO_URL, BRANDING_NAME } from '@/const/branding'; 
+import { BRANDING_LOGO_URL, BRANDING_NAME } from '@/const/branding';
 import { manifestModule } from '@/server/manifest';
 
 const manifest = (): MetadataRoute.Manifest | any => {
   return manifestModule.generate({
-    description: `${BRANDING_NAME} brings you the best UI experience for ChatGPT, Claude, Gemini, and OLLaMA.`,
+    description: `${BRANDING_NAME}: Kind, autonomous AI for everyone`,
     icons: [
       {
         purpose: 'any',

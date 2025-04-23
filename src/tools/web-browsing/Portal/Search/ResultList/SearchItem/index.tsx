@@ -1,6 +1,3 @@
-/* stylelint-disable order/properties-order */
-/* stylelint-disable order/order */
-/* stylelint-disable declaration-empty-line-before */
 import { Typography } from 'antd';
 import { createStyles } from 'antd-style';
 import { memo } from 'react';
