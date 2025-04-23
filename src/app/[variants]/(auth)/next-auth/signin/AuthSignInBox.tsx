@@ -11,7 +11,7 @@ import { useTranslation } from 'react-i18next';
 import BrandWatermark from '@/components/BrandWatermark';
 import { ProductLogo } from '@/components/Branding';
 import AuthIcons from '@/components/NextAuth/AuthIcons';
-import { DOCUMENTS_REFER_URL, PRIVACY_URL, TERMS_URL, OFFICIAL_PREVIEW_URL } from '@/const/url';
+import { DOCUMENTS_REFER_URL, OFFICIAL_PREVIEW_URL, PRIVACY_URL, TERMS_URL } from '@/const/url';
 import { useUserStore } from '@/store/user';
 
 const { Title, Paragraph } = Typography;
@@ -91,7 +91,7 @@ export default memo(() => {
       // not existing, or the user not having the correct role.
       // In some cases, you may want to redirect to a custom error
       if (error instanceof AuthError) {
-        return router.push(`/next-auth/?error=${error.type}`);
+        return router.push(`/next-auth/?error=${error?.type || 'Default'}`);
       }
 
       // Otherwise if a redirects happens Next.js can handle it
@@ -109,7 +109,7 @@ export default memo(() => {
   ];
 
   return (
-    <div className={styles.container}> 
+    <div className={styles.container}>
       <div className={styles.contentCard}>
         {/* Card Body */}
         <Flex gap="large" vertical>

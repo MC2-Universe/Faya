@@ -1,3 +1,6 @@
+/* stylelint-disable order/properties-order */
+/* stylelint-disable order/order */
+/* stylelint-disable declaration-empty-line-before */
 import { createStyles } from 'antd-style';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';

@@ -14,14 +14,10 @@ enum ErrorEnum {
 }
 
 const errorMap = {
-  [ErrorEnum.Configuration]:
-    'Wrong configuration, make sure you have the correct environment variables set. Visit https://lobehub.com/docs/self-hosting/advanced/authentication for more details.',
-  [ErrorEnum.AccessDenied]:
-    'Access was denied. Visit https://authjs.dev/reference/core/errors#accessdenied for more details. ',
-  [ErrorEnum.Verification]:
-    'Verification error, visit https://authjs.dev/reference/core/errors#verification for more details.',
-  [ErrorEnum.Default]:
-    'There was a problem when trying to authenticate. Visit https://authjs.dev/reference/core/errors for more details.',
+  [ErrorEnum.Configuration]: 'Wrong configuration, please try again.',
+  [ErrorEnum.AccessDenied]: 'Access was denied. Please create an account and try again. ',
+  [ErrorEnum.Verification]: 'Verification error, please try again.',
+  [ErrorEnum.Default]: 'There was a problem when trying to authenticate. Please try again.',
 };
 
 export default memo(() => {
