@@ -93,7 +93,7 @@ export default memo(() => {
       if (error instanceof AuthError) {
         const updatedError = error as AuthError & { type: string };
         return router.push(
-          `/next-auth/?error=${updatedError && updatedError?.type ? updatedError?.type : 'Default'}`,
+          `/next-auth/?error=${updatedError && updatedError?.type && updatedError?.type !== undefined ? updatedError?.type : 'Default'}`,
         );
       }
 
